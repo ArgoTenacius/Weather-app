@@ -53,7 +53,7 @@ main{
     top: 10px;
 }
 
-.box-location{
+.box-local{
     font-size: clamp(1.25em, 2vw, 3em);
 }
 
