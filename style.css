@@ -81,7 +81,7 @@ main{
 .minMax-div{
     display: flex;
     flex-direction: row;
-    gap: 10%;
+    gap: 5%;
 }
 
 .min-temp::after, .max-temp::after{

@@ -1,9 +1,3 @@
-import { CreateApi } from "./api.js";
-
-const api_list = await CreateApi('Boston');
-
-console.log(api_list)
-
 const WeatherList = document.getElementById('weather_list');
 
 function DOMcreator(element, elementClass = ''){
@@ -12,7 +6,7 @@ function DOMcreator(element, elementClass = ''){
     return newElement;
 }
 
-function WeatherMainBox(){
+function WeatherMainBox(api_list){
     //whole strucute
     const box_main = DOMcreator('div', 'weather-box-main');
     const box_head = DOMcreator('div', 'box-head');
@@ -55,4 +49,4 @@ function WeatherMainBox(){
     WeatherList.appendChild(box_main);
 }
 
-WeatherMainBox();
+export { WeatherMainBox, WeatherList }
