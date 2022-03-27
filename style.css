@@ -5,6 +5,7 @@
 
 body{
     height: 100vh;
+    color: white;
 }
 
 header{
@@ -17,6 +18,10 @@ header{
 
 section{
     height: 10vw;
+}
+
+hr{
+    border: 1px solid rgb(221, 221, 221);
 }
 
 main{
@@ -35,8 +40,13 @@ main{
 }
 
 .weather-box-main{
+    background-color: rgb(75, 72, 255);
+    border-radius: 20px;
     min-width: fit-content;
+    min-height: fit-content;
     width: 30vw;
+    padding-inline: 4%;
+    padding-block: 2%;
     white-space: nowrap;
 }
 
@@ -65,7 +75,7 @@ main{
 }
 
 .box-celcius{
-    font-size: clamp(5em, 7.5vw, 10em);
+    font-size: clamp(3em, 7.5vw, 10em);
 }
 
 .box-celcius::after{
@@ -74,7 +84,7 @@ main{
 }
 
 .box-sub-info{
-    font-size: clamp(1.5em, 2.5vw, 3em);
+    font-size: clamp(1.1em, 2.5vw, 3em);
     line-height: 1em;
 }
 
@@ -84,6 +94,6 @@ main{
     gap: 5%;
 }
 
-.min-temp::after, .max-temp::after{
+.min-temp::after, .max-temp::after, .feel-like::after{
     content: '\2103';
 }

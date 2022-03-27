@@ -23,8 +23,7 @@ function WeatherMainBox(api_list){
     const main_temp = DOMcreator('h1', 'box-celcius');
     //box-sub-info
     const box_sub_info = DOMcreator('div', 'box-sub-info');
-    const feels_like = DOMcreator('h6');
-
+    const feels_like = DOMcreator('h6', 'feel-like');
     const minMax_temp = DOMcreator('div', 'minMax-div');
     const min_temp = DOMcreator('h6', 'max-temp');
     const max_temp = DOMcreator('h6', 'min-temp');
@@ -37,8 +36,8 @@ function WeatherMainBox(api_list){
     min_temp.textContent = `Min: ${Math.round(api_list.main.temp_min)}`;
     max_temp.textContent = `Max: ${Math.round(api_list.main.temp_max)}`;
     minMax_temp.append(min_temp, max_temp);
-    feels_like.textContent = `Feels like: ${api_list.main.feels_like}`;
-    humidity.textContent = `Humidty: ${api_list.main.humidity}`;
+    feels_like.textContent = `Feels like: ${Math.round(api_list.main.feels_like)}`;
+    humidity.textContent = `Humidty: ${api_list.main.humidity}%`;
 
     main_temp_div.appendChild(main_temp);
     box_sub_info.append(feels_like, minMax_temp, humidity);
