@@ -77,3 +77,13 @@ main{
     font-size: clamp(1.5em, 2.5vw, 3em);
     line-height: 1em;
 }
+
+.minMax-div{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.min-temp::after, .max-temp::after{
+    content: '\2103';
+}
