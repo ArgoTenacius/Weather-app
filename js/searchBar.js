@@ -4,12 +4,21 @@ const search_bar = document.getElementById('search_bar');
 
 async function updateWeather(local){
     try {
+        //before load remove the error aesthetic
+        search_bar.classList.remove('error');
+        search_bar.placeholder = 'Search location';
         const api_list = await CreateApi(local);
-        WeatherList.innerHTML = '';
-        WeatherMainBox(api_list);
+        if(api_list.cod !== '404'){
+            console.log('ah ?')
+            WeatherList.innerHTML = '';
+            WeatherMainBox(api_list);
+        }else{
+            throw Error;
+        }
     }
     catch{
-        console.error('INVALID CITY');
+        search_bar.placeholder = 'Invalid city';
+        search_bar.classList.add('error');
     }
 }
 
@@ -19,3 +28,5 @@ search_bar.addEventListener('keyup', (e) =>{
         search_bar.value = '';
     }
 })
+
+export { updateWeather }
