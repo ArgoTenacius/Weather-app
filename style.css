@@ -6,8 +6,23 @@
 body{
     height: 100vh;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-y: hidden;
 }
 
+::-webkit-scrollbar {
+    height: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(75, 72, 255);
+  }
 
 header{
     display: flex;
@@ -41,6 +56,7 @@ main{
     display: flex;
     gap: 5%;
     align-items: flex-end;
+    min-width: fit-content;
     height: fit-content;
 }
 
@@ -133,5 +149,9 @@ main{
 }
 
 .forecast-temp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
     font-size: clamp(16px, 10vw,38px);
 }

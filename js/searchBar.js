@@ -10,11 +10,10 @@ async function updateWeather(local){
         const api_list = await WeatherApi(local);
         const forecast_list = await ForecastApi(local);
         if(api_list.cod !== '404'){
-            //WeatherList.innerHTML = '';
+            WeatherList.innerHTML = '';
             WeatherMainBox(api_list);
-
-            for(let i = 0; i < 3; i++){
-                console.log(forecast_list.list[i])
+            for(let i = 0; i < 4; i++){
+                //console.log(forecast_list.list[i])
                 ForecastBox(forecast_list.list[i]);
             }
         }else{
