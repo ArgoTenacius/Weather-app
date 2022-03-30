@@ -48,4 +48,20 @@ function WeatherMainBox(api_list){
     WeatherList.appendChild(box_main);
 }
 
-export { WeatherMainBox, WeatherList }
+function ForecastBox(forecast_list){
+    const forecast_div = DOMcreator('div', 'forecast-div');
+    const forecast_hour = DOMcreator('h1');
+    const forecast_box = DOMcreator('div', 'forecast-box');
+    const forecast_icon = DOMcreator('img', 'forecast-icon');
+    const forecast_temp = DOMcreator('h1', 'forecast-temp');
+
+    forecast_hour.textContent = forecast_list.dt_txt.slice(11,16);
+    forecast_icon.src = `http://openweathermap.org/img/w/${forecast_list.weather[0].icon}.png`
+    forecast_temp.textContent = Math.round(forecast_list.main.temp);
+
+    forecast_box.append(forecast_icon, forecast_temp);
+    forecast_div.append(forecast_hour, forecast_box);
+    WeatherList.appendChild(forecast_div);
+}
+
+export { WeatherMainBox, WeatherList, ForecastBox }

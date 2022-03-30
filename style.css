@@ -109,8 +109,16 @@ main{
     content: '\2103';
 }
 
+.forecast-div{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .forecast-box{
     background-color: rgb(167, 72, 255);
+    color: white;
     border-radius: 20px;
     width: clamp(96px, 10vw ,158px);
     height: clamp(96px, 10vw ,158px);

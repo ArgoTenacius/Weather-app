@@ -1,5 +1,5 @@
-import { CreateApi } from "./api.js";
-import { WeatherList, WeatherMainBox } from "./DOM.js";
+import { ForecastApi, WeatherApi } from "./api.js";
+import { WeatherList, WeatherMainBox, ForecastBox } from "./DOM.js";
 const search_bar = document.getElementById('search_bar');
 
 async function updateWeather(local){
@@ -7,11 +7,16 @@ async function updateWeather(local){
         //before load remove the error aesthetic
         search_bar.classList.remove('error');
         search_bar.placeholder = 'Search location';
-        const api_list = await CreateApi(local);
+        const api_list = await WeatherApi(local);
+        const forecast_list = await ForecastApi(local);
         if(api_list.cod !== '404'){
-            console.log('ah ?')
             //WeatherList.innerHTML = '';
             WeatherMainBox(api_list);
+
+            for(let i = 0; i < 3; i++){
+                console.log(forecast_list.list[i])
+                ForecastBox(forecast_list.list[i]);
+            }
         }else{
             throw Error;
         }
