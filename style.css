@@ -8,6 +8,7 @@ body{
     color: white;
 }
 
+
 header{
     display: flex;
     flex-direction: column;
@@ -36,6 +37,13 @@ main{
     justify-content: space-between;
 }
 
+.weather-list{
+    display: flex;
+    gap: 5%;
+    align-items: flex-end;
+    height: fit-content;
+}
+
 .city-input{
     border: 2px solid black;
     border-radius: 10px;
@@ -49,7 +57,7 @@ main{
     min-height: fit-content;
     width: 30vw;
     padding-inline: 4%;
-    padding-block: 2%;
+    padding-bottom: 2%;
     white-space: nowrap;
 }
 
@@ -67,7 +75,7 @@ main{
 }
 
 .box-local{
-    font-size: clamp(1.25em, 2vw, 3em);
+    font-size: clamp(1.25em, 4vw, 3.75em);
 }
 
 .box-info{
@@ -97,6 +105,25 @@ main{
     gap: 5%;
 }
 
-.min-temp::after, .max-temp::after, .feel-like::after{
+.min-temp::after, .max-temp::after, .feel-like::after, .forecast-temp::after{
     content: '\2103';
+}
+
+.forecast-box{
+    background-color: rgb(167, 72, 255);
+    border-radius: 20px;
+    width: clamp(96px, 10vw ,158px);
+    height: clamp(96px, 10vw ,158px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast-icon{
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-temp{
+    font-size: clamp(16px, 10vw,38px);
 }

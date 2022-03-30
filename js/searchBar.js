@@ -10,7 +10,7 @@ async function updateWeather(local){
         const api_list = await CreateApi(local);
         if(api_list.cod !== '404'){
             console.log('ah ?')
-            WeatherList.innerHTML = '';
+            //WeatherList.innerHTML = '';
             WeatherMainBox(api_list);
         }else{
             throw Error;
