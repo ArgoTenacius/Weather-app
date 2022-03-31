@@ -30,7 +30,7 @@ function WeatherMainBox(api_list){
     const humidity = DOMcreator('h6');
 
     weather_state.textContent = api_list.weather[0].description;
-    weather_icon.src = `http://openweathermap.org/img/w/${api_list.weather[0].icon}.png`;
+    weather_icon.src = `https://openweathermap.org/img/w/${api_list.weather[0].icon}.png`;
     weather_local.textContent = `${api_list.name}, ${api_list.sys.country}`;
     main_temp.textContent = Math.round(api_list.main.temp);
     min_temp.textContent = `Min: ${Math.round(api_list.main.temp_min)}`;
@@ -56,7 +56,7 @@ function ForecastBox(forecast_list){
     const forecast_temp = DOMcreator('h1', 'forecast-temp');
 
     forecast_hour.textContent = forecast_list.dt_txt.slice(11,16);
-    forecast_icon.src = `http://openweathermap.org/img/w/${forecast_list.weather[0].icon}.png`
+    forecast_icon.src = `https://openweathermap.org/img/w/${forecast_list.weather[0].icon}.png`
     forecast_temp.textContent = Math.round(forecast_list.main.temp);
 
     forecast_box.append(forecast_icon, forecast_temp);

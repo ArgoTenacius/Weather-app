@@ -12,7 +12,6 @@ async function WeatherApi(city){
 async function ForecastApi(city){
     try{
         const forecast_api = (await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${key}`)).json();
-        console.log(await forecast_api)
         return await forecast_api;
     }catch{
         console.error(error);
